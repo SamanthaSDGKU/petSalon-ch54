@@ -9,42 +9,34 @@ let petSalon = {
     phone:"666-555-7777"
 }
 
-console.log(petSalon);
+//constructor (add the breed and service)
+function Pet(name,age,gender,breed,service){
+    this.name=name;
+    this.age=age;
+    this.gender=gender;
+    this.breed=breed;
+    this.service=service;
+}
+// create the variables for the HTML elements
+let inputName = document.getElementById("txtName");
+let inputAge = document.getElementById("txtAge");
+let inputGender = document.getElementById("txtGender");
+let inputBreed = document.getElementById("txtBreed");
+let inputService = document.getElementById("txtService");
 
-//creating the pets
-let pet1 = {
-    name:"Scooby",
-    age:60,
-    gender:"Male",
-    breed:"Dane",
-    service:"Grooming"
-}
-let pet2 = {
-    name:"Scrappy",
-    age:50,
-    gender:"Male",
-    breed:"Mixed",
-    service:"Vaccines"
-}
-let pet3={
-    name:"Tweety",
-    age:70,
-    gender:"Female",
-    breed:"Canarian",
-    service:"Nails"
+function register(){
+    let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value); // create the new obj
+    pets.push(newPet);//push the newpet into the array
+    console.log(pets);// display the array
 }
 
-pets.push(pet1,pet2,pet3,pet1,pet2);
-console.log(pets);
-
-function displayNames(){
-
-    for(let i=0;i<pets.length;i++){
-        document.getElementById("petNames").innerHTML+=`<p> ${pets[i].name} </p>`;
-    }
-
-    document.getElementById("petsInfo").innerHTML="We have " + pets.length + " pets";
+function init(){
+    //create 3 pets
+    let pet1 = new Pet("Scooby",60,"Male","Dane","Grooming");
+    let pet2 = new Pet("Scrappy",50,"Male","Mixed","Vaccines");
+    let pet3 = new Pet("Tweety",70,"Male","Canarian","Nails");
+    
+    pets.push(pet1,pet2,pet3);
 
 }
-
-displayNames();
+window.onload=init;//wait to render the HTML

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/mystyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -17,10 +18,37 @@
 
     <main>
         <div id="petsInfo">
-            
         </div>
-        <div id="petNames">
-
+        <div class="register-form">
+            <h2>Register a new pet</h2>
+            <div class="input-control">
+                <label>Name:</label>
+                <input type="text" id="txtName">
+            </div>
+            <div class="input-control">
+                <label>Age:</label>
+                <input type="text" id="txtAge">
+            </div>
+            <div class="input-control">
+                <label>Gender:</label>
+                <input type="text" id="txtGender">
+            </div>
+            <div class="input-control">
+                <label>Breed:</label>
+                <input type="text" id="txtBreed">
+            </div>
+            <div class="input-control">
+                <label>Service:</label>
+                <select id="txtService">
+                    <option value="">-- Select an option --</option>
+                    <option value="Grooming">Grooming 🐶</option>
+                    <option value="Nails">Nails</option>
+                    <option value="Vaccines">Vaccines</option>
+                </select>
+            </div>
+            <div class="btn-container">
+                <button onclick="register()" class="btn-register">Register</button>
+            </div>
         </div>
     </main>
 
