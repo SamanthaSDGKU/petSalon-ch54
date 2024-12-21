@@ -15,28 +15,35 @@ console.log(petSalon);
 let pet1 = {
     name:"Scooby",
     age:60,
-    gender:"Male"
+    gender:"Male",
+    breed:"Dane",
+    service:"Grooming"
 }
 let pet2 = {
     name:"Scrappy",
     age:50,
-    gender:"Male"
+    gender:"Male",
+    breed:"Mixed",
+    service:"Vaccines"
 }
 let pet3={
     name:"Tweety",
     age:70,
-    gender:"Female"
+    gender:"Female",
+    breed:"Canarian",
+    service:"Nails"
 }
 
-pets.push(pet1,pet2,pet3);
+pets.push(pet1,pet2,pet3,pet1,pet2);
 console.log(pets);
 
 function displayNames(){
-    console.log(pets[0].name);
-    console.log(pets[1].name);
-    console.log(pets[2].name);
 
-    console.log("We have " + pets.length + " pets");
+    for(let i=0;i<pets.length;i++){
+        document.getElementById("petNames").innerHTML+=`<p> ${pets[i].name} </p>`;
+    }
+
+    document.getElementById("petsInfo").innerHTML="We have " + pets.length + " pets";
 
 }
 
