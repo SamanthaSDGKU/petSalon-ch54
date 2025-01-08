@@ -30,7 +30,7 @@ function register(){
     let newPet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputType.value); // create the new obj
     pets.push(newPet);//push the newpet into the array
     console.log(pets);// display the array
-
+    
     displayRow();
     clearForm();
     displayTypes();
